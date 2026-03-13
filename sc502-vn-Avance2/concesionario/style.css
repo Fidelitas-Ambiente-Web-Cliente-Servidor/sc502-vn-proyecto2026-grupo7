@@ -1,0 +1,780 @@
+/* fuentes de google
+se esta importando antes de todo lo demas*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+/* Parte 1 del CSS*/
+
+/* Variables globales
+Si se cambia algo de aqui, se actualiza en todo lo demas el sitio automaticamente*/
+
+:root {
+    --black: #0a0a0a;
+    /* Fondo principal */
+    --dark: #111216;
+    /* Fondo del nav */
+    --card: #181b22;
+    /* Fondo de tarjetas */
+    --border: #252830;
+    /* Bordes sutiles */
+    --accent: #e8372a;
+    /* Rojo: color principal */
+    --accent2: #f5a623;
+    /* Naranja: precios */
+    --white: #f0ede8;
+    /* Texto principal */
+    --muted: #7a7f8e;
+    /* Texto secundario */
+
+    /* Fuentes */
+    --font-display: 'Bebas Neue', sans-serif;
+    /* Títulos */
+    --font-body: 'DM Sans', sans-serif;
+    /* Texto normal */
+    --font-mono: 'Space Mono', monospace;
+    /* Etiquetas */
+}
+
+/* reset
+se eliminan estilos por defectos del navegador para partir de cero*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base*/
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ══════════════════════════════════════ */
+/*NAVEGACION*/
+/* ══════════════════════════════════════ */
+
+nav {
+    background: var(--dark);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: sticky;
+    /* Se queda fijo al hacer scroll */
+    top: 0;
+    z-index: 100;
+    /* Siempre encima de todo */
+    height: 60px;
+}
+
+/* Logo */
+.nav-brand {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* La letra CD en rojo */
+.nav-brand span {
+    color: var(--accent);
+}
+
+/* Contenedor de los links */
+.nav-links {
+    display: flex;
+    gap: .25rem;
+}
+
+/* Cada link del menú */
+.nav-links a {
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: .45rem .85rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+/* Link al pasar el cursor O link activo */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--white);
+    border-color: var(--border);
+    background: rgba(255, 255, 255, .04);
+}
+
+/* encabezado de pagina
+ El bloque con etiqueta + título que aparece en todas las páginas excepto index*/
+
+.page-header {
+    padding: 3.5rem 2rem 2rem;
+    border-bottom: 1px solid var(--border);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Etiqueta pequeña arriba del título */
+.page-header .label {
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: .5rem;
+}
+
+/* Título principal de la página */
+.page-header h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+/* Contenido Principal
+Wrapper que centra y da padding al contenido de cada página*/
+
+.page-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* 
+   FOOTER
+*/
+footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: .68rem;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: auto;
+}
+
+/* ══════════════════════════════════════ */
+/* Parte 3*/
+/* ══════════════════════════════════════ */
+
+/* BOTONES
+   Clase reutilizable en todas las páginas
+*/
+.boton {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: .8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+    background: var(--accent);
+    /* Rojo sólido por defecto */
+    border: 2px solid var(--accent);
+    padding: .75rem 2rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .2s;
+    font-weight: 700;
+}
+
+/* Al pasar el cursor: invierte colores */
+.boton:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+/* Variante secundaria: sin relleno */
+.boton.secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--border);
+}
+
+.boton.secondary:hover {
+    border-color: var(--white);
+}
+
+
+/* HERO
+   Sección principal de index.html */
+.hero {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    /* Centra todo horizontal y vertical */
+    text-align: center;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo decorativo con cuadrícula y gradiente */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 50% at 50% 60%,
+            rgba(232, 55, 42, .12) 0%,
+            transparent 70%),
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 39px,
+            rgba(255, 255, 255, .02) 40px),
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 39px,
+            rgba(255, 255, 255, .02) 40px);
+    pointer-events: none;
+    /* No interfiere con los clicks */
+}
+
+/* Etiqueta pequeña encima del título */
+.hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    display: block;
+}
+
+/* Título gigante */
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    /* Responsive automático */
+    line-height: .95;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+}
+
+/* Palabra en rojo dentro del título */
+.hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+}
+
+/* Subtítulo */
+.hero p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+}
+
+/* Contenedor de los dos botones */
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* En móvil se apilan */
+}
+
+
+/* ESTADÍSTICAS (index)
+   La fila con 4+, 100%, 24h */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    /* El gap de 1px muestra este color */
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.stat {
+    background: var(--card);
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+/* Número grande */
+.stat-num {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    display: block;
+}
+
+/* Texto debajo del número */
+.stat-label {
+    font-family: var(--font-mono);
+    font-size: .65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* ══════════════════════════════════════ */
+/*parte 4*/
+/* ══════════════════════════════════════ */
+
+/* GRID DE PRODUCTOS
+   Contenedor que distribuye las tarjetas
+   automáticamente según el ancho
+*/
+/* 3 columnas como la referencia */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* 
+   TARJETA DE PRODUCTO
+*/
+.producto {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    /* Texto centrado */
+    transition: transform .25s, border-color .25s;
+}
+
+/* Efecto al pasar el cursor */
+.producto:hover {
+    transform: translateY(-4px);
+    /* Se eleva 4px */
+    border-color: var(--accent);
+    /* Borde rojo */
+}
+
+
+/*
+   IMAGEN DE LA TARJETA
+*/
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: var(--dark);
+    padding: 1.5rem;
+    display: block;
+}
+
+
+/* CUERPO DE LA TARJETA
+   El área de texto debajo de la imagen */
+.producto-body {
+    padding: 1.2rem;
+}
+
+/* Nombre del vehículo */
+.producto-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: .4rem;
+}
+
+/* Especificaciones técnicas (cc, tipo, año) */
+.producto-body .spec {
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    color: var(--muted);
+    margin-bottom: .5rem;
+}
+
+/* Descripción corta */
+.producto-body .descripcion {
+    font-size: .88rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: .75rem;
+}
+
+/* Precio */
+.producto-body .precio {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--accent2);
+    /* Naranja para destacar */
+    margin: .5rem 0 1rem;
+    letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════════ */
+/*parte 5*/
+/* ══════════════════════════════════════ */
+
+/* CONTENEDOR DE LA TABLA
+   Permite scroll horizontal en móvil si la tabla es muy ancha */
+.table-wrap {
+    overflow-x: auto;
+}
+
+
+/* TABLA*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Une los bordes de celdas adyacentes */
+    font-family: var(--font-mono);
+    font-size: .82rem;
+}
+
+
+/* ENCABEZADOS*/
+
+/* Fila de encabezados */
+thead tr {
+    border-bottom: 2px solid var(--accent);
+    /* Línea roja debajo */
+}
+
+/* Celda de encabezado */
+th {
+    text-align: left;
+    padding: .9rem 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    /* Texto rojo */
+    font-size: .7rem;
+}
+
+
+/* FILAS DE DATOS*/
+
+/* Celda de dato */
+td {
+    padding: .85rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--white);
+}
+
+/* Fila resaltada al pasar el cursor */
+tbody tr:hover {
+    background: rgba(255, 255, 255, .03);
+}
+
+
+/* BADGES DE ESTADO
+   Las etiquetas de Disponible/Reservado*/
+.badge {
+    display: inline-block;
+    padding: .25rem .75rem;
+    border-radius: 20px;
+    /* Bordes completamente redondeados */
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Badge verde: Disponible */
+.badge.disponible {
+    background: rgba(34, 197, 94, .15);
+    /* Verde muy transparente */
+    color: #4ade80;
+    /* Verde brillante */
+    border: 1px solid rgba(34, 197, 94, .3);
+}
+
+/* Badge naranja: Reservado */
+.badge.reservado {
+    background: rgba(245, 166, 35, .15);
+    /* Naranja muy transparente */
+    color: var(--accent2);
+    /* Naranja brillante */
+    border: 1px solid rgba(245, 166, 35, .3);
+}
+
+/* Badge rojo: Vendido */
+.badge.vendido {
+    background: rgba(232, 55, 42, .15);
+    /* Rojo muy transparente */
+    color: var(--accent);
+    /* Rojo brillante */
+    border: 1px solid rgba(232, 55, 42, .3);
+}
+
+/* ══════════════════════════════════════ */
+/*Parte 6*/
+/* ══════════════════════════════════════ */
+
+/* GRID DEL FORMULARIO
+   Organiza los campos en 2 columnas */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 columnas iguales */
+    gap: 1.5rem;
+    max-width: 680px;
+}
+
+
+/* GRUPO DE CAMPO
+   Contiene el label y el input juntos*/
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* Label arriba, input abajo */
+    gap: .5rem;
+}
+
+/* Ocupa las 2 columnas completas */
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+
+/* ETIQUETAS */
+
+label {
+    font-family: var(--font-mono);
+    font-size: .7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+/* CAMPOS DE ENTRADA
+   Aplica a input, select y textarea */
+
+input,
+select,
+textarea {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: .95rem;
+    padding: .75rem 1rem;
+    outline: none;
+    /* Quita el borde azul del navegador */
+    transition: border-color .2s;
+    width: 100%;
+}
+
+/* Borde rojo al hacer clic en el campo */
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--accent);
+}
+
+/* Color del placeholder */
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--muted);
+    opacity: .6;
+}
+
+
+/*SELECT
+   Menú desplegable de vehículos*/
+
+select {
+    cursor: pointer;
+    appearance: none;
+    /* Quita la flecha por defecto */
+    /* Flecha personalizada con SVG */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237a7f8e' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Color de las opciones del menú */
+
+select option {
+    background: var(--card);
+    color: var(--white);
+}
+
+
+/* TEXTAREA
+   Campo de texto multilínea */
+
+textarea {
+    resize: vertical;
+    /* Solo se puede redimensionar verticalmente */
+    min-height: 120px;
+}
+
+/* ══════════════════════════════════════ */
+/*parte 7*/
+/* ══════════════════════════════════════ */
+
+/* CONTACTO
+   Layout de 2 columnas: info + formulario */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 columnas iguales */
+    gap: 4rem;
+    align-items: start;
+    /* Alinea al tope, no al centro */
+}
+
+/* Título de la columna izquierda */
+
+.contact-info h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+
+/* ITEMS DE CONTACTO
+   Cada fila con ícono + texto */
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    /* Alinea al tope si el texto es largo */
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Caja del ícono */
+
+.contact-icon {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: .5rem .7rem;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    /* No se encoge aunque el texto sea largo */
+}
+
+/* Etiqueta encima del dato */
+
+.contact-item strong {
+    color: var(--white);
+    display: block;
+    margin-bottom: .2rem;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: var(--font-mono);
+}
+
+/* Dato de contacto */
+.contact-item p {
+    font-size: .9rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    /* Nav: links más compactos */
+    .nav-links a {
+        padding: .35rem .5rem;
+        font-size: .65rem;
+    }
+
+    /* Hero: título más pequeño */
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    /* Stats: de 3 columnas a 1 */
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Tarjetas: de 1 columna en móvil */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Formularios: de 2 columnas a 1 */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contacto: de 2 columnas a 1 */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Encabezado de página más compacto */
+    .page-header {
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    /* Contenido con menos padding */
+    .page-content {
+        padding: 2rem 1rem;
+    }
+
+}
+
+
+/* RESPONSIVE MÓVIL PEQUEÑO
+   Teléfonos menores a 480px */
+@media (max-width: 480px) {
+
+    /* Nav: oculta el texto del logo */
+    .nav-brand {
+        font-size: 1.2rem;
+    }
+
+    /* Botones ocupan todo el ancho */
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-btns .boton {
+        width: 100%;
+        text-align: center;
+    }
+
+}

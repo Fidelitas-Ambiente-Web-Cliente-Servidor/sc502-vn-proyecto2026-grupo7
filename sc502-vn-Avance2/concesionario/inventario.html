@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario — Concesionario Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <a class="nav-brand" href="index.html">
+            <span>CD</span> CONCESIONARIO
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="motos.html">Motos</a>
+            <a href="autos.html">Autos</a>
+            <a href="inventario.html" class="active">Inventario</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="reserva.html">Reservar</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO DE PÁGINA -->
+    <div class="page-header">
+        <span class="label">Sistema</span>
+        <h2>Inventario de Vehículos</h2>
+    </div>
+
+    <!-- CONTENIDO: tabla de inventario -->
+    <main class="page-content">
+        <div class="table-wrap">
+            <table>
+
+                <!-- ENCABEZADOS DE LA TABLA -->
+                <thead>
+                    <tr>
+                        <th>Vehículo</th>
+                        <th>Tipo</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+
+                <!-- FILAS DE DATOS -->
+                <tbody>
+
+                    <tr>
+                        <td><strong>CFMOTO 675NK</strong></td>
+                        <td>Moto</td>
+                        <td>$9,500</td>
+                        <td><span class="badge disponible">Disponible</span></td>
+                        <td><a class="boton" href="reserva.html">Reservar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Honda Transalp</strong></td>
+                        <td>Moto</td>
+                        <td>$11,500</td>
+                        <td><span class="badge disponible">Disponible</span></td>
+                        <td><a class="boton" href="reserva.html">Reservar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Toyota Corolla</strong></td>
+                        <td>Auto</td>
+                        <td>$28,000</td>
+                        <td><span class="badge disponible">Disponible</span></td>
+                        <td><a class="boton" href="reserva.html">Reservar</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Honda Civic</strong></td>
+                        <td>Auto</td>
+                        <td>$26,000</td>
+                        <td><span class="badge disponible">Disponible</span></td>
+                        <td><a class="boton" href="reserva.html">Reservar</a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        © 2026 Concesionario Digital — San José, Costa Rica
+    </footer>
+
+</body>
+
+</html>

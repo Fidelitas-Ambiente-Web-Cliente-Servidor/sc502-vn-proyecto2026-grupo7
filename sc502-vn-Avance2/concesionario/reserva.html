@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva — Concesionario Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav>
+        <a class="nav-brand" href="index.html">
+            <span>CD</span> CONCESIONARIO
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="motos.html">Motos</a>
+            <a href="autos.html">Autos</a>
+            <a href="inventario.html">Inventario</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="reserva.html" class="active">Reservar</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- ENCABEZADO DE PÁGINA -->
+    <div class="page-header">
+        <span class="label">Proceso</span>
+        <h2>Reservar Vehículo</h2>
+    </div>
+
+    <!-- CONTENIDO: formulario de reserva -->
+    <main class="page-content">
+        <form class="form-grid">
+
+            <!-- NOMBRE -->
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+
+            <!-- TELÉFONO -->
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+506 0000 0000" required>
+            </div>
+
+            <!-- SELECTOR DE VEHÍCULO -->
+            <div class="form-group full">
+                <label for="vehiculo">Vehículo</label>
+                <select id="vehiculo" name="vehiculo" required>
+                    <option value="">— Selecciona un vehículo —</option>
+                    <option value="cfmoto_675nk">CFMOTO 675NK — $9,500</option>
+                    <option value="honda_transalp">Honda Transalp — $11,500</option>
+                    <option value="toyota_corolla">Toyota Corolla — $28,000</option>
+                    <option value="honda_civic">Honda Civic — $26,000</option>
+                </select>
+            </div>
+
+            <!-- MENSAJE OPCIONAL -->
+            <div class="form-group full">
+                <label for="mensaje">Mensaje (opcional)</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Preguntas, horario de visita..."></textarea>
+            </div>
+
+            <!-- BOTÓN ENVIAR -->
+            <div class="form-group full">
+                <button class="boton" type="submit">
+                    Confirmar Reserva
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        © 2026 Concesionario Digital — San José, Costa Rica
+    </footer>
+
+</body>
+
+</html>
