@@ -12,17 +12,26 @@
 
     <!-- NAVEGACIÓN -->
     <nav>
-        <a class="nav-brand" href="index.html">
+        <a class="nav-brand" href="index.php">
             <span>CD</span> CONCESIONARIO
         </a>
         <div class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="motos.html">Motos</a>
-            <a href="autos.html">Autos</a>
-            <a href="inventario.html" class="active">Inventario</a>
-            <a href="clientes.html">Clientes</a>
-            <a href="reserva.html">Reservar</a>
+            <a href="index.php" class="active">Inicio</a>
+            <a href="motos.php">Motos</a>
+            <a href="autos.php">Autos</a>
+            <a href="inventario.php">Inventario</a>
+            
+            <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
+                <a href="gestion_clientes.php">Gestión de Clientes</a>
+            <?php endif; ?>
+            
             <a href="contacto.html">Contacto</a>
+
+            <?php if (isset($_SESSION['usuario'])): ?>
+                <a href="logout.php" style="color: #e74c3c;">Cerrar Sesión (<?php echo $_SESSION['usuario']; ?>)</a>
+            <?php else: ?>
+                <a href="login.html" class="boton-login">Login</a>
+            <?php endif; ?>
         </div>
     </nav>
 
