@@ -13,6 +13,10 @@
         <div class="nav-links">
             <a href="index.html">Inicio</a>
             <a href="motos.html">Motos</a>
+            <a href="autos.html">Autos</a>
+            <a href="inventario.php" class="active">Inventario</a>
+            <a href="clientes.html">Clientes</a>
+            <a href="reserva.html">Reservar</a>
             <a href="contacto.html">Contacto</a>
         </div>
     </nav>
