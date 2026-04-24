@@ -7,7 +7,7 @@
 // Configuración estándar para XAMPP
 $host = "127.0.0.1:3307"; 
 $user = "root";
-$pass = ""; // XAMPP por defecto no tiene contraseña
+$pass = ""; 
 $db   = "concesionario_db";
 
 // Crear conexión

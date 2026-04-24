@@ -7,7 +7,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
     exit();
 }
 
-// 2. CONEXIÓN A LA BASE DE DATOS (Puerto 3307 según tu XAMPP)
+// 2. CONEXIÓN A LA BASE DE DATOS 
 $host = "127.0.0.1:3307"; 
 $user = "root"; 
 $pass = ""; 

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipo = $_POST['tipo'];
     $precio = $_POST['precio'];
     $desc = $_POST['descripcion'];
-    $imagen = $_POST['imagen']; // Nombre del archivo en la carpeta img/
+    $imagen = $_POST['imagen']; 
 
     $sql = "INSERT INTO vehiculos (nombre_modelo, tipo, precio, descripcion, imagen) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);

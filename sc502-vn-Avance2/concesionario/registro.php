@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Capturamos todos los campos necesarios
     $nombre_completo = $_POST['nombre_completo'];
-    $correo = $_POST['correo']; // <--- Nuevo campo para evitar el error de duplicado
+    $correo = $_POST['correo']; 
     $telefono = $_POST['telefono'];
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         echo "<script>alert('El usuario o el correo ya están registrados.'); window.history.back();</script>";
     } else {
-        // Insertar con 6 parámetros (nombre, usuario, pass, correo, tel, rol) -> "ssssss"
+        // Insertar con 6 parámetros (nombre, usuario, pass, correo, tel, rol) -> ""
         $sql = "INSERT INTO usuarios (nombre_completo, usuario, password, correo, telefono, rol) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssssss", $nombre_completo, $usuario, $password, $correo, $telefono, $rol);

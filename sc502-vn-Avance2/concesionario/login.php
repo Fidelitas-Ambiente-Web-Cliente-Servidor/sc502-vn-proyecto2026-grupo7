@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Iniciar Sesión — Concesionario Digital</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos para el centrado absoluto del login */
+        
         body {
             margin: 0;
             padding: 0;
@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 6px;
             color: #fff;
             outline: none;
-            box-sizing: border-box; /* Evita que el input se salga del card */
+            box-sizing: border-box; 
         }
 
         .input-group input:focus {
