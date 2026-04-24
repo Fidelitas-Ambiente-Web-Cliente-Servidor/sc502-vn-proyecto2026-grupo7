@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 );
 
 -- 4. INSERTAR USUARIOS DE PRUEBA (Admin y Cliente)
--- Nota: En un sistema real, las contraseñas deberían estar encriptadas.
+
 INSERT INTO usuarios (usuario, password, rol) VALUES 
 ('admin_j', '12345', 'admin'),
 ('cliente_test', '12345', 'cliente');
