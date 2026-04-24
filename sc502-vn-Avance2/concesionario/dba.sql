@@ -1,45 +1,39 @@
--- 1. Crear la base de datos si no existe
+-- 1. CREACIÓN DE LA BASE DE DATOS
 CREATE DATABASE IF NOT EXISTS concesionario_db;
 USE concesionario_db;
 
--- 2. Tabla de Vehículos (Catálogo)
-
+-- 2. TABLA DE VEHÍCULOS (Corregida con 'descripcion' y 'estado')
 CREATE TABLE IF NOT EXISTS vehiculos (
-    id_vehiculo INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nombre_modelo VARCHAR(100) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
     tipo ENUM('auto', 'moto') NOT NULL,
-    precio DECIMAL(12, 2) NOT NULL,
-    anio INT NOT NULL,
+    imagen VARCHAR(255) NOT NULL,
     descripcion TEXT,
-    imagen_url VARCHAR(255) 
+    estado VARCHAR(50) DEFAULT 'Disponible'
 );
 
--- 3. Tabla de Clientes
-
-CREATE TABLE IF NOT EXISTS clientes (
-    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_completo VARCHAR(150) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    telefono VARCHAR(20) NOT NULL,
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- 3. TABLA DE USUARIOS (Para el login)
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    rol ENUM('admin', 'cliente') DEFAULT 'cliente'
 );
 
--- 4. Tabla de Reservas
+-- 4. INSERTAR USUARIOS DE PRUEBA (Admin y Cliente)
+-- Nota: En un sistema real, las contraseñas deberían estar encriptadas.
+INSERT INTO usuarios (usuario, password, rol) VALUES 
+('admin_j', '12345', 'admin'),
+('cliente_test', '12345', 'cliente');
 
-CREATE TABLE IF NOT EXISTS reservas (
-    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_solicitante VARCHAR(150) NOT NULL, -- Input 'nombre'
-    telefono_contacto VARCHAR(20) NOT NULL,   -- Input 'telefono'
-    id_vehiculo_interes INT,                  -- Select 'vehiculo'
-    mensaje_adicional TEXT,                   -- Textarea 'mensaje'
-    fecha_solicitud TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_vehiculo_interes) REFERENCES vehiculos(id_vehiculo)
-);
-
--- 5. Inserción de datos iniciales
-INSERT INTO vehiculos (nombre_modelo, tipo, precio, anio, imagen_url) VALUES 
-('Toyota Corolla', 'auto', 28000.00, 2023, 'toyota_corolla.png'),
-('Honda Civic', 'auto', 26000.00, 2023, 'hondacivic2023.png'),
-('Mini Cooper Hardtop', 'auto', 35000.00, 2023, 'MINIHardtop.png'),
-('CFMOTO 675NK', 'moto', 9500.00, 2024, 'cf675.png'),
-('Honda Transalp', 'moto', 11500.00, 2024, 'transalp.png');
+-- 5. INSERTAR INVENTARIO DE AUTOS (Basado en tus imágenes)
+INSERT INTO vehiculos (nombre_modelo, precio, tipo, imagen, descripcion, estado) VALUES 
+('Toyota Corolla', 28000, 'auto', 'corolla2000sedan.png', 'Motor 2000cc | Sedán | 2023', 'Disponible'),
+('Honda Civic', 26000, 'auto', 'hondacivic.png', 'Motor 1500cc | Sedán | 2023', 'Disponible'),
+('Mini Cooper Hardtop', 35000, 'auto', 'minicooper.png', 'Motor 2000cc | Hardtop | 2025', 'Disponible'),
+('Taos SUV Compacto', 27975, 'auto', 'taos.png', 'Motor 1395cc | SUV | 2025', 'Disponible'),
+('Bentley Flying Spur', 254000, 'auto', 'bentley_flying.png', 'Motor 2995cc | Sedán | 2025', 'Disponible'),
+('Bentley Bentayga', 234000, 'auto', 'bentley_bentayga.png', 'Motor 3996cc | SUV | 2025', 'Disponible'),
+('BMW 2 Series M235i', 57950, 'auto', 'bmw2.png', 'Motor 1998cc | Sedán | 2023', 'Disponible'),
+('BMW M3 Berlina', 147000, 'auto', '
