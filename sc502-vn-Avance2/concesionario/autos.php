@@ -55,7 +55,7 @@
                     <p class="spec">Motor 2000cc</p>
                     <p class="spec">Sedán | 2023</p>
                     <p class="precio">$28,000</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                     <p class="spec">Motor 1800cc</p>
                     <p class="spec">Sedán | 2023</p>
                     <p class="precio">$26,000</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -79,7 +79,7 @@
                     <p class="spec">Motor 2000cc</p>
                     <p class="spec">Hardtop | 2025</p>
                     <p class="precio">$35,000</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -91,7 +91,7 @@
                     <p class="spec">Motor 1395cc</p>
                     <p class="spec">SUV | 2026</p>
                     <p class="precio">$27,975</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -103,7 +103,7 @@
                     <p class="spec">Motor 2995cc</p>
                     <p class="spec">Sedán | 2025</p>
                     <p class="precio">$254.000,00</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -115,7 +115,7 @@
                     <p class="spec">Motor 3996cc</p>
                     <p class="spec">SUV | 2025</p>
                     <p class="precio">$234.000,00</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -127,7 +127,7 @@
                     <p class="spec">Motor 2979cc</p>
                     <p class="spec">Sedán | 2023</p>
                     <p class="precio">$57.950</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -139,7 +139,7 @@
                     <p class="spec">Motor 2993cc</p>
                     <p class="spec">Sedán | 2026</p>
                     <p class="precio">$147.000,00</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -151,7 +151,7 @@
                     <p class="spec">Motor 2000cc</p>
                     <p class="spec">Sedán | 2023</p>
                     <p class="precio">$$86.590</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -163,7 +163,7 @@
                     <p class="spec">Motor 1500cc</p>
                     <p class="spec">Pickup | 2026</p>
                     <p class="precio">$97.900</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 

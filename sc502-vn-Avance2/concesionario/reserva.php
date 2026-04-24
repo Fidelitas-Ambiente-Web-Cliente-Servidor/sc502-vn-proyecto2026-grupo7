@@ -32,26 +32,26 @@
     </div>
 
     <main class="page-content">
-        <div id="infoVehiculo" style="background: #1a1a1a; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #e74c3c; display: none;">
-            <p id="textoVehiculo" style="margin: 0; color: #fff;"></p>
-        </div>
-
         <form id="formReserva" class="form-grid">
             <div class="form-group">
                 <label for="nombre">Nombre Completo</label>
                 <input type="text" id="nombre" name="nombre" 
-                       value="<?php echo isset($_SESSION['nombre']) ? $_SESSION['nombre'] : ''; ?>" 
-                       placeholder="Tu nombre completo" required>
+                       value="<?php echo isset($_SESSION['nombre_completo']) ? $_SESSION['nombre_completo'] : ''; ?>" 
+                       required>
             </div>
 
             <div class="form-group">
                 <label for="correo">Correo Electrónico</label>
-                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                <input type="email" id="correo" name="correo" 
+                       value="<?php echo isset($_SESSION['correo']) ? $_SESSION['correo'] : ''; ?>" 
+                       required>
             </div>
 
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="+506 0000 0000" required>
+                <input type="tel" id="telefono" name="telefono" 
+                       value="<?php echo isset($_SESSION['telefono']) ? $_SESSION['telefono'] : ''; ?>" 
+                       required>
             </div>
 
             <div class="form-group">
@@ -60,13 +60,13 @@
             </div>
 
             <div class="form-group full">
-                <label for="vehiculo">Confirmar Vehículo</label>
+                <label for="vehiculo">Vehículo de Interés</label>
                 <select id="vehiculo" name="vehiculo" required>
                     <option value="">— Selecciona un vehículo —</option>
-                    <option value="CFMOTO 675NK">CFMOTO 675NK — $9,500</option>
-                    <option value="Honda Transalp">Honda Transalp — $11,500</option>
                     <option value="Toyota Corolla">Toyota Corolla — $28,000</option>
                     <option value="Honda Civic">Honda Civic — $26,000</option>
+                    <option value="CFMOTO 675NK">CFMOTO 675NK — $9,500</option>
+                    <option value="Honda Transalp">Honda Transalp — $11,500</option>
                 </select>
             </div>
 
@@ -83,6 +83,6 @@
 
     <footer>© 2026 Concesionario Digital — San José, Costa Rica</footer>
     
-    <script src="script.js"></script>   
+    <script src="./script.js"></script>
 </body>
 </html>

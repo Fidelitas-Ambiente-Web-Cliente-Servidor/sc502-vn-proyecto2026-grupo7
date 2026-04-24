@@ -28,7 +28,7 @@
             <?php if (isset($_SESSION['usuario'])): ?>
                 <a href="logout.php" style="color: #e74c3c;">Cerrar Sesión (<?php echo $_SESSION['usuario']; ?>)</a>
             <?php else: ?>
-                <a href="login.html" class="boton-login">Login</a>
+                <a href="login.php" class="boton-login">Login</a>
             <?php endif; ?>
         </div>
     </nav>
@@ -94,7 +94,7 @@
                                       </td>";
                             } else {
                                 // Vista de Cliente
-                                echo '<td><a class="boton" href="reserva.html">Reservar</a></td>';
+                                echo '<td><a class="boton" href="reserva.php">Reservar</a></td>';
                             }
                             echo "</tr>";
                         }

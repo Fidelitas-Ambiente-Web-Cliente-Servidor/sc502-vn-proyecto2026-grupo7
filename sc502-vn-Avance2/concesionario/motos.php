@@ -31,7 +31,7 @@
             <?php if (isset($_SESSION['usuario'])): ?>
                 <a href="logout.php" style="color: #e74c3c;">Cerrar Sesión (<?php echo $_SESSION['usuario']; ?>)</a>
             <?php else: ?>
-                <a href="login.html" class="boton-login">Login</a>
+                <a href="login.php" class="boton-login">Login</a>
             <?php endif; ?>
         </div>
     </nav>
@@ -55,7 +55,7 @@
                     <p class="spec">Naked Sport | 2024</p>
                     <p class="descripcion">Estilo naked con excelente potencia y maniobrabilidad.</p>
                     <p class="precio">$9,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <<a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -68,7 +68,7 @@
                     <p class="spec">Adventure | 2024</p>
                     <p class="descripcion">Equilibrio ideal entre potencia, tecnología y aventura.</p>
                     <p class="precio">$11,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -81,7 +81,7 @@
                     <p class="spec">Naked Sport | 2024</p>
                     <p class="descripcion">Diseño deportivo con rendimiento sobresaliente.</p>
                     <p class="precio">$10,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -94,7 +94,7 @@
                     <p class="spec">Touring | 2024</p>
                     <p class="descripcion">Diseñada para viajes largos con alto nivel de confort.</p>
                     <p class="precio">$12,000</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -107,7 +107,7 @@
                     <p class="spec">Off-Road | 2024</p>
                     <p class="descripcion">Perfecta para rutas mixtas y aventuras off-road.</p>
                     <p class="precio">$7,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -120,7 +120,7 @@
                     <p class="spec">Adventure | 2024</p>
                     <p class="descripcion">Motocicleta versátil ideal para aventura y uso diario.</p>
                     <p class="precio">$8,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -133,7 +133,7 @@
                     <p class="spec">Adventure | 2024</p>
                     <p class="descripcion">Equilibrio ideal entre potencia, tecnología y aventura.</p>
                     <p class="precio">$11,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -146,7 +146,7 @@
                     <p class="spec">Adventure | 2024</p>
                     <p class="descripcion">Equilibrio ideal entre potencia, tecnología y aventura.</p>
                     <p class="precio">$11,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -159,7 +159,7 @@
                     <p class="spec">Adventure | 2024</p>
                     <p class="descripcion">Equilibrio ideal entre potencia, tecnología y aventura.</p>
                     <p class="precio">$11,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
@@ -172,7 +172,7 @@
                     <p class="spec">Adventure | 2024</p>
                     <p class="descripcion">Equilibrio ideal entre potencia, tecnología y aventura.</p>
                     <p class="precio">$11,500</p>
-                    <a class="boton" href="reserva.html">Reservar</a>
+                    <a class="boton" href="reserva.php">Reservar</a>
                 </div>
             </div>
 
