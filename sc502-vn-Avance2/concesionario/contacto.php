@@ -1,5 +1,9 @@
+<?php
+session_start();
+require_once __DIR__ . '/db.php';
+?>
 <!DOCTYPE html>
-<?php session_start(); ?>
+<!-- < ?php session_start(); ?>-->
 <html lang="es">
 <head>
     <meta charset="UTF-8">

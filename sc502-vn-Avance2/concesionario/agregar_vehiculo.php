@@ -6,9 +6,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
     exit();
 }
 
-$host = "127.0.0.1:3307"; $user = "root"; $pass = ""; $db = "concesionario_db";
-$conn = new mysqli($host, $user, $pass, $db);
-
+require_once __DIR__ . '/db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $modelo = $_POST['nombre_modelo'];
     $tipo = $_POST['tipo'];

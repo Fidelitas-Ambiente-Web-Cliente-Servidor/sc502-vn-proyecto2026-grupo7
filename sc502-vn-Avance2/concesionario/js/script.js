@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // =========================
     // CLASES (POO)
-    // =========================
     class Reserva {
         constructor(nombre, correo, telefono, fecha, vehiculo, mensaje) {
             this.id = Date.now();
@@ -24,10 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.mensaje = mensaje;
         }
     }
-
-    // =========================
     // LÓGICA DE CONTACTO
-    // =========================
     const formContacto = document.getElementById("formContacto");
 
     if (formContacto) {
@@ -56,9 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // =========================
+
     // LÓGICA DE RESERVA
-    // =========================
     const formReserva = document.getElementById("formReserva");
     if (formReserva) {
         formReserva.addEventListener("submit", function (e) {

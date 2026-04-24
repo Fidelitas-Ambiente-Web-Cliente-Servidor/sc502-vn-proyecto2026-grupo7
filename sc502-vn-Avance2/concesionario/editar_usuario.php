@@ -6,12 +6,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
     exit();
 }
 
-$host = "127.0.0.1:3307"; $user = "root"; $pass = ""; $db = "concesionario_db";
-$conn = new mysqli($host, $user, $pass, $db);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-}
+require_once __DIR__ . '/db.php';
 
 // Obtener datos del usuario actual
 if (isset($_GET['id'])) {

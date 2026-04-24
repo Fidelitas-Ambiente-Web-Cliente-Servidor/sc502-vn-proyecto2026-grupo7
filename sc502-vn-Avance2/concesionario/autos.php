@@ -1,5 +1,16 @@
+<?php 
+session_start(); 
+
+require_once __DIR__ . '/db.php';
+
+// Obtener vehículos disponibles
+$sql = "SELECT * FROM vehiculos WHERE estado = 'Disponible'";
+$resultado = $conn->query($sql);
+?>
+
+
+
 <!DOCTYPE html>
-<?php session_start(); ?>
 
 <html lang="es">
 
@@ -32,7 +43,7 @@
             <?php if (isset($_SESSION['usuario'])): ?>
                 <a href="logout.php" style="color: #e74c3c;">Cerrar Sesión (<?php echo $_SESSION['usuario']; ?>)</a>
             <?php else: ?>
-                <a href="login.html" class="boton-login">Login</a>
+                <a href="login.php" class="boton-login">Login</a>
             <?php endif; ?>
         </div>
     </nav>

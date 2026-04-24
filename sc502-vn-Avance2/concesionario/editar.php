@@ -5,9 +5,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
     exit();
 }
 
-$host = "127.0.0.1:3307"; $user = "root"; $pass = ""; $db = "concesionario_db";
-$conn = new mysqli($host, $user, $pass, $db);
-
+require_once __DIR__ . '/db.php';
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
     $res = $conn->query("SELECT * FROM vehiculos WHERE id = $id");

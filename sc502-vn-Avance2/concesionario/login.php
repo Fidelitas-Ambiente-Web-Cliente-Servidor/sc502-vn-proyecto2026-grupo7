@@ -3,17 +3,7 @@ session_start();
 
 // 1. LÓGICA DE AUTENTICACIÓN
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Configuración de tu servidor local XAMPP
-    $host = "127.0.0.1:3307"; 
-    $user = "root"; 
-    $pass = ""; 
-    $db   = "concesionario_db";
-
-    $conn = new mysqli($host, $user, $pass, $db);
-
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
+    require_once __DIR__ . '/db.php';
 
     $u = $_POST['usuario'];
     $p = $_POST['password'];

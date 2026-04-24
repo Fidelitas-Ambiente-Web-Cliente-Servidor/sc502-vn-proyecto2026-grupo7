@@ -32,7 +32,7 @@
     </div>
 
     <main class="page-content">
-        <form id="formReserva" class="form-grid">
+        <form id="formReserva" class="form-grid" action="procesar_reserva.php" method="POST">
             <div class="form-group">
                 <label for="nombre">Nombre Completo</label>
                 <input type="text" id="nombre" name="nombre" 

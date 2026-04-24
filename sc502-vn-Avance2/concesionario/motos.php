@@ -1,26 +1,31 @@
-<!DOCTYPE html>
-<?php session_start(); ?>
-<html lang="es">
+<?php 
+session_start(); 
 
+require_once __DIR__ . '/db.php';
+
+// Obtener vehículos disponibles
+$sql = "SELECT * FROM vehiculos WHERE estado = 'Disponible'";
+$resultado = $conn->query($sql);
+?>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motos — Concesionario Digital</title>
+    <title>Inventario — Concesionario Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- NAVEGACIÓN -->
-     <nav>
+    <nav>
         <a class="nav-brand" href="index.php">
             <span>CD</span> CONCESIONARIO
         </a>
         <div class="nav-links">
-            <a href="index.php" class="active">Inicio</a>
+            <a href="index.php">Inicio</a>
             <a href="motos.php">Motos</a>
             <a href="autos.php">Autos</a>
-            <a href="inventario.php">Inventario</a>
+            <a href="inventario.php" class="active">Inventario</a>
             
             <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
                 <a href="gestion_clientes.php">Gestión de Clientes</a>

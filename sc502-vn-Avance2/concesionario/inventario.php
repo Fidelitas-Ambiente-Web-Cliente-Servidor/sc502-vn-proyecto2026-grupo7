@@ -2,19 +2,8 @@
 session_start(); 
 
 // 1. CONFIGURACIÓN DE CONEXIÓN
-$host = "127.0.0.1:3307"; 
-$user = "root";
-$pass = ""; 
-$db   = "concesionario_db";
+require_once __DIR__ . '/db.php';
 
-$conn = new mysqli($host, $user, $pass, $db);
-
-if ($conn->connect_error) {
-    $conn = new mysqli("db", "root", "root_password", $db);
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
-}
 
 // --- LÓGICA DE BORRADO
 if (isset($_GET['id_borrar'])) {
